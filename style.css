@@ -1,3 +1,59 @@
-h1{
+@charset "UTF-8";
+body{
+    text-align: center;
     font-family: Arial, sans-serif;
+}
+h1{
+    font-size: 20pt;
+}
+h2{
+    margin: 0px;
+}
+h2 spam{
+    border: 2pt solid black;    
+}
+h2 spam#jogador1{
+    color: red;
+    background: lightgray;
+}
+h2 spam#jogador2{
+    color: blue;
+    background: lightblue;
+}
+
+table#tabuleiro{
+    display: inline-block;
+    background: black;
+    width: 300px;
+    height: 308px; 
+}
+table#tabuleiro tr{
+    height: 100px;
+}
+table#tabuleiro tr td{
+    width: 100px;
+}
+
+/* Situações dos botões */
+table#tabuleiro tr td.vazio{
+    font-size: 20pt;
+    background: green;
+}
+table#tabuleiro tr td.jogador1{
+    font-size: 50pt;
+    color: red;
+    background: lightgray;
+}
+table#tabuleiro tr td.jogador2{
+    font-size: 50pt;
+    color: blue;
+    background: lightblue;
+}
+
+#btnReiniciar{
+    width: 300px;
+    height: 30px;
+    font-size: 15pt;
+    border: 2px solid black;
+    background: lightgray;
 }

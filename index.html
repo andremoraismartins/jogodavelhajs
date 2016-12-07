@@ -7,8 +7,64 @@
     </head>
     <body>
         <h1>Jogo da Velha</h1>
-        <div id="jogo">
+        <h2>Jogador 1 = <spam id="jogador1">X</spam></h2>
+        <h2>Jogador 2 = <spam id="jogador2">O</spam></h2>
+        <h3 id="jogador">Jogador 1 é a sua vez!</h3>
+        <table id="tabuleiro">
+            <tr id="linha0">
+                <td id="celula00" data-linha="0" data-coluna="0"></td>
+                <td id="celula01" data-linha="0" data-coluna="1"></td>
+                <td id="celula02" data-linha="0" data-coluna="2"></td>
+            </tr>
+            <tr id="linha1">
+                <td id="celula10" data-linha="1" data-coluna="0"></td>
+                <td id="celula11" data-linha="1" data-coluna="1"></td>
+                <td id="celula12" data-linha="1" data-coluna="2"></td>
+            </tr>
+            <tr id="linha2">
+                <td id="celula20" data-linha="2" data-coluna="0"></td>
+                <td id="celula21" data-linha="2" data-coluna="1"></td>
+                <td id="celula22" data-linha="2" data-coluna="2"></td>
+            </tr>
+        </table>
+        <p>
+            <input type="button" value="Reiniciar" id="btnReiniciar">
+        </p>
 
-        </div>
+        <!--<div id="tabuleiro">
+            <div id="linha1" class="linha">
+                <div id="botao00" class="vazio">
+                    <p>Vazio</p>
+                </div>
+                <div id="botao01" class="xis">
+                    <p>X</p>
+                </div>
+                <div id="botao02" class="bola">
+                    <p>O</p>    
+                </div>
+            </div>
+            <div id="linha2" class="linha">
+                <div id="botao10" class="xis">
+                    <p>X</p>
+                </div>
+                <div id="botao11" class="vazio">
+                    <p>Vazio</p>
+                </div>
+                <div id="botao12" class="bola">
+                    <p>O</p>    
+                </div>
+            </div>
+            <div id="linha3" class="linha">
+                <div id="botao20" class="bola">
+                    <p>O</p>    
+                </div>
+                <div id="botao21" class="xis">
+                    <p>X</p>
+                </div>
+                <div id="botao22" class="vazio">
+                    <p>Vazio</p>
+                </div>
+            </div>
+        </div>-->
     </body>
 </html>
