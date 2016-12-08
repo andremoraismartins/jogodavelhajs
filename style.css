@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Cabeçalho */
 body{
     text-align: center;
     font-family: Arial, sans-serif;
@@ -20,23 +21,24 @@ h2 spam#jogador2{
     color: blue;
     background: lightblue;
 }
-
+/* Tabela tabuleiro */
 table#tabuleiro{
     display: inline-block;
     background: black;
-    width: 300px;
+    width: 308px;
     height: 308px; 
 }
 table#tabuleiro tr{
     height: 100px;
 }
-table#tabuleiro tr td{
+table#tabuleiro tr td{  
+    padding: 0px;  
+    height: 100px;
     width: 100px;
 }
-
-/* Situações dos botões */
+/* Situações das celulas */
 table#tabuleiro tr td.vazio{
-    font-size: 20pt;
+    font-size: 50pt;
     background: green;
 }
 table#tabuleiro tr td.jogador1{
@@ -49,8 +51,9 @@ table#tabuleiro tr td.jogador2{
     color: blue;
     background: lightblue;
 }
-
+/* Rodapé */
 #btnReiniciar{
+    visibility: hidden;
     width: 300px;
     height: 30px;
     font-size: 15pt;

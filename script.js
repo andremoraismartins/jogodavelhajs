@@ -39,6 +39,29 @@ function verificarColunas(){
     return -1;
 }
 
+function verificarDiagonal1(){
+    //Verifica somente a diagonal de  0,0 até 2,2
+    var primeiro = tabuleiro[0][0];
+    if (primeiro == cVazio)
+        return false;
+    for(var i = 0; i < 3; i++)
+        if (tabuleiro[i][i] != primeiro)
+            return false;
+    return true;
+}
+
+function verificarDiagonal2(){
+    //Verifica somente a diagonal de  0,2 até 2,0
+    var primeiro = tabuleiro[0][2];
+    if (primeiro == cVazio)
+        return false;
+    var r = -1, c = 3;
+    while((++r) <= 2 && (--c) >= 0)
+        if (tabuleiro[r][c] != primeiro)
+            return false;
+    return true;
+}
+
 function verificarVelha(){
     var velha = 0;
     for(var i = 0; i < 3; i++)    
@@ -50,12 +73,11 @@ function verificarVelha(){
 }
 
 function verificarTabuleiro(){
-    if (verificarLinhas() > -1 || verificarColunas() > -1)
+    if (verificarLinhas() > -1 || verificarColunas() > -1 || verificarDiagonal1() || verificarDiagonal2())
         fim = jogadorAtual;
     else if (verificarVelha())
         fim = -1;
     return fim;
-
 }
 
 function trocarJogador(){
@@ -76,8 +98,10 @@ function preencherTabuleiro(cel){
 }
 
 function celulaClick(){
-    if (fim != 0)
+    if (fim != 0){
+        alert("O jogo foi finalizado! Clique no botão reiniciar para jogar novamente...");
         return;
+    }
     if (this.className == cVazio){
         if (jogadorAtual == 1){
             this.className = cJogador1;
@@ -88,7 +112,6 @@ function celulaClick(){
             this.innerHTML = "O";
         }
         preencherTabuleiro(this);
-        debugger;
         verificarTabuleiro();
         if (fim == -1){
             document.getElementById("jogador").innerHTML = "Jogo finalizado, pois deu velha!";
@@ -96,8 +119,10 @@ function celulaClick(){
         }
         else if (fim == 0)
             trocarJogador();
-        else
+        else{
             document.getElementById("jogador").innerHTML = "Jogador "+fim+" é o vencedor!";
+            document.getElementById("btnReiniciar").style.visibility = "visible";
+        }
             
     }
     else if (this.className == cJogador1)
@@ -107,7 +132,7 @@ function celulaClick(){
 }
 
 function btnReiniciarClick(){
-    alert("this.id");
+    location.reload();
 }
 
 function carregarCelula(cel){
@@ -124,5 +149,4 @@ window.onload = function(){
     
     var btnReiniciar = document.getElementById("btnReiniciar");
     btnReiniciar.onclick = btnReiniciarClick;
-    document.getElementById("btnReiniciar").style.visibility = "hidden";
 }
